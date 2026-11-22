@@ -179,11 +179,15 @@ export function renderGame(root: HTMLElement, levelId: string, deps: Deps): () =
     hintTimer = window.setTimeout(clearHint, 3500);
   };
 
+  // 盤のどこを押しても、その高さの段を選ぶ（パンケーキの左右・すき間でも外れない）
   const onPointerDown = (ev: PointerEvent): void => {
-    const el = (ev.target as HTMLElement).closest<HTMLElement>('.pc');
-    if (!el || !boardEl.contains(el)) return;
+    if (!boardEl.contains(ev.target as Node)) return;
     ev.preventDefault();
-    doFlip(Number(el.dataset.i));
+    const r = boardEl.getBoundingClientRect();
+    const pad = 6;
+    const h = (r.height - pad * 2) / n;
+    const i = Math.min(n - 1, Math.max(0, Math.floor((ev.clientY - r.top - pad) / h)));
+    doFlip(i);
   };
   boardEl.addEventListener('pointerdown', onPointerDown);
 

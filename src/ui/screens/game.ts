@@ -86,12 +86,11 @@ export function renderGame(root: HTMLElement, levelId: string, deps: Deps): () =
       let done = true;
       for (let j = n - 1; j >= i; j--) if (stack[j] !== j + 1) done = false;
       el.classList.toggle('done', done);
-      el.classList.toggle('flipping', i < animateTop);
-      if (i < animateTop) {
-        el.classList.remove('flipping');
-        void el.offsetWidth;
-        el.classList.add('flipping');
-      }
+      el.classList.remove('flipping');
+    }
+    if (animateTop > 0) {
+      void boardEl.offsetWidth; // 再レイアウトは 1 回だけ（行ごとに強制すると遅い）
+      for (let i = 0; i < animateTop; i++) pcs[i]!.classList.add('flipping');
     }
     movesEl.textContent = String(moves);
     undoBtn.disabled = history.length === 0;

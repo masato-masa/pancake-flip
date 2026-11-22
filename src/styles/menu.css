@@ -1,0 +1,46 @@
+.home-screen {
+  text-align: center;
+}
+.home-art {
+  position: relative;
+}
+.home-art svg {
+  width: 100%;
+  height: 100%;
+}
+.home-title {
+  font-size: 2.2rem;
+  letter-spacing: 0.06em;
+}
+/* ホームの絵: 大きさのちがうパンケーキの山。 */
+.home-hero {
+  display: grid;
+  gap: 5px;
+  width: min(60vw, 220px);
+  margin: 0 auto;
+}
+.hp {
+  height: 26px;
+  justify-self: center;
+  width: var(--w);
+  border-radius: 999px;
+  background: linear-gradient(#f7d68a, #e3a95a);
+  box-shadow: inset 0 -3px 0 #c98a3d, inset 0 0 0 2px #9a6428;
+}
+.home-art {
+  width: 100%;
+  height: auto;
+}
+
+.row-note {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.home-progress {
+  color: var(--star);
+  font-weight: 700;
+  font-size: 15px;
+}

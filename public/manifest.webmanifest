@@ -1,0 +1,14 @@
+{
+  "name": "ひっくりパンケーキ",
+  "short_name": "パンケーキ",
+  "start_url": "/pancake-flip/",
+  "scope": "/pancake-flip/",
+  "display": "standalone",
+  "background_color": "#f6f5ef",
+  "theme_color": "#f6f5ef",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/pancake-flip/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/pancake-flip/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

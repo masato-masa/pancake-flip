@@ -1,0 +1,35 @@
+/* 共通のクロームは shared/ にある（出どころは C:\claude\shared-ui）。ここはこのゲームの色と外枠。 */
+@import './shared/tokens.css';
+@import './shared/chrome.css';
+
+:root {
+  --level-cols: 4;
+  --pc-hi: #f7d68a;
+  --pc-lo: #c98a3d;
+  --pc-edge: #9a6428;
+  --done: #7fbf8f;
+  --star: #f3c55a;
+  --star-off: #e4dcd5;
+  --ink: var(--title);
+  --ink-soft: var(--muted);
+  --radius: 14px;
+  --shadow: var(--shadow-xs);
+}
+
+html,
+body {
+  min-height: 100%;
+  overscroll-behavior: none;
+}
+
+.app {
+  max-width: 592px;
+  margin: 0 auto;
+}
+
+.star {
+  color: var(--star-off);
+}
+.star.on {
+  color: var(--star);
+}

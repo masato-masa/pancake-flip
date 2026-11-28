@@ -104,7 +104,7 @@ export function renderGame(root: HTMLElement, levelId: string, deps: Deps): () =
     toastTimer = window.setTimeout(() => (toastEl.hidden = true), 1800);
   };
   if (!settings.seenTip()) {
-    toast('パンケーキを タップ = そこから上を ひっくり返す');
+    toast('タップした ところから 上を ひっくり返す');
     window.clearTimeout(toastTimer);
     toastTimer = window.setTimeout(() => (toastEl.hidden = true), 5000);
   }
